@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="map">
+      <div class="controls"></div>
+      <a
+        href="https://www.maptiler.com"
+        style="position: absolute; left: 10px; bottom: 10px; z-index: 999"
+        ><img
+          src="https://api.maptiler.com/resources/logo.svg"
+          alt="MapTiler logo"
+      /></a>
+    </div>
+    <div id="sidebar"></div>
+
+    <p>
+      <a href="https://www.maptiler.com/copyright/" target="_blank"
+        >&copy; MapTiler</a
+      >
+      <a href="https://www.openstreetmap.org/copyright" target="_blank"
+        >&copy; OpenStreetMap contributors</a
+      >
+    </p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="data/BoroughBoundaries.js"></script>
+    <script src="data/CommunityDistricts.js"></script>
+    <script src="data/StateAssemblyDistricts.js"></script>
+    <script src="data/StateSenateDistricts.js"></script>
+    <script src="data/CongressionalDistricts.js"></script>
+    <script src="data/CityCouncilDistricts.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

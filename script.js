@@ -8,19 +8,12 @@ var map = L.map("map").setView([40.7128, -74.006], 13);
 const dataPoints = [];
 
 //Creates the map and streets for the world
-L.tileLayer(
-  "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
-  {
-    attribution:
-      'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-    maxZoom: 20,
-    id: "mapbox/streets-v11",
-    tileSize: 512,
-    zoomOffset: -1,
-    accessToken:
-      "pk.eyJ1IjoiamFteW9vZXMiLCJhIjoiY2t2NGN6eHgyMWRrMDJwbXNlMzhvajFodiJ9.wVG528nlp49ca4gWMpQBYA",
-  }
-).addTo(map);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+
 
 //async and await to grab the data from bicycle parking csv
 const fetchText = async (url) => {

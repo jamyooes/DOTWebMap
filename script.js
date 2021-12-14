@@ -255,7 +255,7 @@ boroDist.setStyle({ color: "red" });
 communityDist.setStyle({ color: "green" });
 senateDist.setStyle({ color: "purple" });
 congDist.setStyle({ color: "orange" });
-cityCouncilDist.setStyle({ color: "pink" });
+cityCouncilDist.setStyle({ color: "black" });
 
 //Create a layer group for control on the map in order to toggle the layers off and on
 var boroLayer = L.layerGroup([boroDist]);

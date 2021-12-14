@@ -1,0 +1,207 @@
+This Document describes the code for bicycle parking
+I highly suggest reading this on an IDE 
+Please read this side by side with the appropriate files 
+---------------------------------------------------------------
+index.html 
+---------------------------------------------------------------
+Lines 8-13: One of the basic requirements for leaflet map (css) 
+Lines 14-18: The other basic requirement to use leaflet map (script). The 
+             Script tag must always be after the css portion of leaflet 
+Line 19: Link to basic styling using css. I would assume a developer reading 
+        will understand css 
+Line 22: div element that will contain the map 
+Line 23: div element that will contain side bar information 
+Line 25: use jquery to assist with interacting with the dom 
+Line 26: links to the borough boundary json file that is saved as a javascript file 
+        and then has a variable declared in front of it. This is to help with layers 
+        control 
+Line 27: same idea as line 26, but for community districts 
+Line 28: same idea as line 26, but for state assembly districts
+Line 29: same idea as line 26. but for state senate ditricts 
+Line 30: same idea as line 26, but for congressional districts 
+Line 31: same idea as line 26, but for city counci districts 
+Line 32: script tag to use D3 
+Line 33: script tag to our code to generate the map, toggle controls, sidebar, and charts 
+---------------------------------------------------------------
+script.js
+---------------------------------------------------------------
+Line 6: Sets up the map view to the coordinate to New York City
+        Sets the zoom to 13. The Largest possible zoom is 20, which zooms 
+        to a street view. Highest zoom (1) will give a global map view
+Line 9: This is an array that will help with storing asset data. This array 
+        (representing all the points) will store an array of indvidual asset data. 
+        Each array of the individual asset will store the refer to lines 91-108 for 
+        the actual pushing of the following data into this array:
+        -latitude
+        -longitude
+        -asset type
+        -assembly district number
+        -community district number
+        -borough code
+        -borough name
+        -congressional district number
+        -city council district number
+        -senate district number
+        -internal ID for the asset
+        -flood zone type
+        -the date the asset got installed
+        -asset address 
+        -program type one example is citi bike program
+        -street where the asset is located
+
+
+Line 12-15: Sets up the world map and credit open streey map for the open sourced map 
+
+Line 18-21: Async and await function that will grab and read the data from bicycle parking csv.
+
+Line 24: The pointGroup will be used to hold all asset points from the file as a layer
+
+Data Cleaning Portion
+Line 28: Using our async await function describes in 18-21
+Line 30: Contain all the text into a variable called data
+Line 32-164: A loop to go through the text because at each index contains asset information 
+             For example, data[0] will contain data on one particular bicyle parking asset 
+             The data contains a lot of information and can be refered to by the BicycleParking.csv 
+             I selected some of the important data that I thought would be useful as described above 
+             TLDR: Each iteration of the for loop represents an unique bicyle parking asset
+             with all the attributes from the bicycle parking csv
+        Line 34: The coordinates for the data is contained in a column/attribute called the_geom. The problem 
+                 with the_geom is that the latitude and longitude are encapsulated inside parenthesis 
+                 so I used split to split the_geom on the space to contain the latitude and longitude 
+        Lines 37-108: Handles the data and scape the data 
+                Line 37: Using the split from line 34. The variable y is assigned the longitude 
+                Line 40: Using the split from line 34. The variable x is assigned to the laitutde 
+                Line 43: Variable Contains the bicycle parking asset data such as (Wave Rack, Small Hoop) this is data originally 
+                        from the bicycle parking csv 
+                Line 46: Variable contains the assembly district number 
+                Line 49: Variable contains the community district number 
+                Line 58: Variable contains the borough code. 
+                        If the variable contains a 1 it represents Manhattan 
+                        If the variable contains a 2 it represents Bronx 
+                        If the variable contains a 3 it represents Brooklyn 
+                        If the variable contains a 4 it represents Queens 
+                        If the variable contains a 5 it represents Staten Island 
+                Line 61: Variable contains borugh names for NYC 
+                        Manhattan, Bronx, Brooklyn, Queens, Staten Island 
+                Line 64: Variable contains Congressional District Number 
+                Line 67: Variable contains City Council District Number 
+                Line 70: Variable contains Senate District Number 
+                Line 73: Variable contains the internal ID for the asset parking 
+                Line 76: Variable contains the flood information about the flood zone 
+                Line 79: Variable contains the date the bicycle parking asset was installed 
+                Line 82: Variable contains the address to the bicyle parking asset 
+                Line 85: Variable contains the program name to the bicyle pakring asset 
+                Line 88: Variable contains the street to the bicycle parking asset 
+                Lines 91-108: All the variables from lines 37-88 will be 
+                              put in as an array (which represents the asset point) and 
+                              pushed into another array (refer to the array in line 9 
+                              which represents all the asset points) 
+        
+        Lines 111-162: This will create a circle marker for the bicycle parking asset 
+                ***Just a reminder that this is still under a for loop where 
+                each iteration represents an unique data point 
+                Line 111: Create a circle marking using the coordinates for the latitude contained 
+                        in variable x from line 37 and the longitude contained in variable y 
+                        from line 40. The reason why I used a circle marker is that circle markers 
+                        tend to perfer well with thousands of points compared to the regular markers. 
+                Line 112: Modify the size of the circle marker. The smaller the marker the lower the lag 
+                          when moving and zooming into the map 
+                Line 113: This will create a popup when a user clicks on the circle marker on the map 
+                Line 114-162: Contains all the information to be put into the popup for the circle markers.
+                                All the information is from the variables described in lines 37-88 
+        Line 163: adds the circle marker into the pointGroup layer, which contains a layer of all the asset points 
+                  Refer to line 24
+Layers
+Lines 179-186: This creates a layer for the assembly district layer and references the variable from 
+              the StateAssemblyDistricts.js file to help with the boundaries for the assembly district layer 
+              described in the html portion. 
+        Lines 180-183: on each feature meaning for each district on the asembly district there will be a 
+                popup that will indicate, which district it is on the assembly district 
+        Line 184: Links an onclick function that will activate when an user clicks on a district in the assembly layer
+                Refer to lines 303-526 
+Lines 189-203: Same ideas as the assembly district layer except this is for the boroughs layer 
+Lines 206-213: Same ideas as the assembly district layer except this is for the community district layer 
+Lines 216-223: Same ideas as the assembly district layer except this is for the Senate District layer 
+Lines 226-236: Same ideas as the assembly district layer except this is for the congressional district layer 
+Lines 239-250: Same ideas as the assembly district layer except this is for the city council district layer 
+
+Lines 253-258: Sets the color for each of the politcal boundary layers 
+Lines 261-266: Puts all the layers into their own layergroup for control on the map 
+Lines 273-281: This sets the name for each of the layers, so the user knows which layers to select  
+Lines 284: Adds the all the layers created into the control so the user can interact.
+
+Side bar
+Line 290: This is a variable for the sidebar, which go into furthur detail below
+Lines 293-300: This is a function will run when the user clicks on the asset from the side bar 
+        Line 294: This will remove previously clicked on assets from the sidebar 
+        Line 295: This will read in the asset data clicked on to scrape the longitude and latitude 
+        Line 296: This will grab the latitude 
+        Line 297: This will grab the longitude 
+        Line 298: This will move the current view of the map to the point on the map in a street areial view 
+        Line 299: This will create the marker so the user will know which asset it is becuase there will be many 
+           cases where the assets are very close to one another 
+
+Line 303-526: This is the onlick function refered by in line 184 and the other layers for the politcal boundaries 
+        Line 305: The variable will hold data points on the disitrct that was clciked on for some poltical layer 
+        Line 307: This will keep track of the layer that was clicked 
+        Line 309: This will be used as an index to access points at the current layer
+                  if selectDistrict becomes 4 it will give the index to community district
+                  if selectDistrict becomes 3 it will give the index to assembly district
+                  if selectDistrict becomes 5 it will give the index to borough code
+                  if selectDistrict becomes 7 it will give the index to congressional district
+                  if selectDistrict becomes 8 it will give the index to city council district
+                  if selectDistrict becomes 9 it will give the index to senate district
+                  For more clarification these indexes refer to the array pushed in lines 91-108
+        Line 311: This is an array that will hold data for the charts later on as a dictionary  
+        Line 313: This will store the unique dates and a count on the number of assets installed on the date 
+        Lines 325-343: This part will check the layer clicked and update the selectDistrict variable that match 
+                       the clicked layer and will be used to index into the array. The currLayer will then later 
+                       check throughout the dataPoints (Refer to line 9), which contains all the data asset points 
+                       for all asset points that match the select district at the selectedDistrict 
+        Lines 345-349: This is a for loop that will iterate through all the points and find points 
+                        that match the current layer and push it into a seperate array called arr that will be used 
+                        in the for loop below  
+        Lines 355-425: This is a for loop that achieves 2 things by iterating through the array called arr directly above 
+                        that contains all the points that are on the selected district on the current politcal boundary 
+                        The first thing this for loop achieves is put all the information about the asset on the side bar. This 
+                        information is the same exact information on the point. Inaddition, the user can click on the text to 
+                        move to the point with a marker to indicate which bicycle parking asset it is. This feature is from 
+                        the function in lines 293-300. The second thing that the for loop achieves is finding unqiue dates 
+                        and then keep a count in the number of assets installed on the same day in the same district 
+                        ***Each iteration represents an unique point that is in the select district 
+                Lines 356-406: This is performs all the behavior in the first part, which is displaying inofrmation about assets 
+                                that are in the selected district. In addition, clicking on the text will move the user to the point 
+                Line 408: This will scape the date for the asset
+                Line 410: The tracker will be used to keep track of unique dates 
+                          A true value for tracker will indicate that the current date in the iteration is a duplicate 
+                          while a tracker with a value false will indicate that the current date in the iteration 
+                          is a new date 
+                Lines 412-420: If there is a duplicate date then increase the number of assets installed by 1 in the array in line 313
+                                This array will contain a dictionary of 2 keys with unique dates of assets installed and the count of the 
+                                assets installed in the same day  
+                Lines 422-425: If the current date in the current iteration is not in the array in line 313 then it is an unique date and must 
+                                be entered into the array with 1 asset installed on that date 
+        Lines 427: This will sort the array described in 313, which contains a dictionary of the date assets were installed and the count 
+                   of the assets installed 
+        Lines 429-435: Loop through the array described in 313 to copy into another array, but parse the dates into time because the current 
+                        type for the dates are in strings. The array that the date is being copied to is described in line 311
+        Charts and Time Slider: This feature will update whenever a user selects a district 
+        Lines 442-444: Set up the D3 Chart dimensions and margins 
+        Line 446: This is to reset the chart whenever the user wants to select another district in the same layer or in another layer 
+        Lines 448-449: Set up the X and Y ranges for the chart in the space that they can fill up in the scope of our dimensions. This is important 
+                      in that you can modify the width and height if you want to scale the graph more. 
+        Lines 451-458: This is a helper function that will map points from data collected for the date installed and the number of assets installed on the same date.
+                        These points will be used to draw the line. 
+        Line 460: This is the style to see the chart on the screen, this is needed because the chart is beng dynamically created. 
+        Lines 462-470: This creates the chart. 
+        Lines 472-476: This sets up the x domain. The d3.extent will get the latest and earliest dates, which will help with the scaling
+                        on the graph for the x axis 
+        Lines 478-483: This sets up the y domain from 0 assets to the largest assets to help with the scaling 
+        Lines 485-491: Draws the line sets the data into the line to follow along with lines 451-458 to map out all the data from 
+                        line 487 into the function in 489 as stated in lines 451-458. In addition, there was some selection of the line 
+                        to be blue and no fill 
+        Lines 494-497: These are to fully integrate the x-axis to the chart (without this you can't see the x-axis)
+        Lines 498-505: This is to set the label to the x-axis 
+        Line 508: This is to fully integrate the y-axis to the chart (without this you can't see the y-axis)
+        Lines 509-516: This is to set the label to the y-axis
+        Lines 518-526: This is to create the title to the chart       

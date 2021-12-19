@@ -12,7 +12,7 @@ For new users please read through the tutorial below
 
 ## Selecting politcal boundaries and toggle asset points on the map on or off
 At the upper right corner of the map there will be an icon shown below.
-![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/control.png)
+![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/layer.JPG)
 Hovering over or moving the cursor over the icon will show various options.
 The first option is to toggle the points on or off
 The rest of the options are politcal boundaries:

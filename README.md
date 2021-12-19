@@ -15,7 +15,7 @@ The user will be able to toggle points on and off
 The control allows the user to select a politcal boundadry. It is advised to select 
 only one politcal boundary. 
 The politcal boundaries are the Assembly District, Borough, Congressional District,
-City Council District, Community District, Senate District. 
+City Council District, Community District, Senate District. The controls will be in the upper right hand corner of the map
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/control.png)
 
 ## Asset information and zooming

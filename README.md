@@ -29,6 +29,7 @@ The rest of the options are politcal boundaries:
 The user can view politcal boundaries on the map by clicking on the empty box in the options. 
 If the user wants to try other boundarues, it is advised to turn off the previous political boundary.
 <br/>
+![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/layer.JPG)
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/control.png)
 
 ## Asset information and zooming

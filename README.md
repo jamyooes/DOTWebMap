@@ -1,9 +1,10 @@
 # DOTWebMap
 Creating Web Maps and dynamic dashboards using D3
 
-Live Demo
-For new users please read through the tutorial below
+Live Demo 
 https://jamyooes.github.io/DOTWebMap/
+<br /> 
+For new users please read through the tutorial below
 
 ## Web Map Tutorial
 

@@ -17,7 +17,7 @@ At the upper right corner of the map there will be an icon shown below.
 <br/>
 Hovering over or moving the cursor over the icon will show various options.
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/control.png)
-The first option is to toggle the points on (Blue check mark) or off(Empty box). The rest of the options are politcal boundaries:
+The first option is to toggle the points on (Blue check mark, user can see the points on the map) or off (Empty box, user can not see the points on the map). The rest of the options are politcal boundaries:
 <ul>
 <li>Assembly District </li> 
 <li>Borough</li> 

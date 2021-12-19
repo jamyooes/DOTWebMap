@@ -18,8 +18,8 @@ City Council District, Community District, Senate District.
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/control.png)
 
 ## Asset information and zooming
-Can zoom by scrolling with the mouse or clicking on the + in the top left corner
-Can move around the map by dragging the cursor (left click and move the mouse)
+Can zoom by scrolling with the mouse or clicking on the + in the top left corner.
+Users can navigate around the map by dragging the cursor (left click and move the mouse simultaneously)
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/walkthrough2.gif)
 
 ## Politcal Boundaries and dynamic charts 

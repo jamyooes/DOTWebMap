@@ -11,12 +11,19 @@ For new users please read through the tutorial below
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/Default%20Page.JPG)
 
 ## Selecting politcal boundaries and toggle asset points on the map on or off
-At the upper right hand corner of the map 
-The user will be able to toggle points on and off.
-The user allows the user to select a politcal boundadry. It is advised to select 
-only one politcal boundary. 
-The politcal boundaries are the Assembly District, Borough, Congressional District,
-City Council District, Community District, Senate District. The controls will be in the upper right hand corner of the map
+At the upper right corner of the map there will be an icon shown below.
+![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/control.png)
+Hovering over or moving the cursor over the icon will show various options.
+The first option is to toggle the points on or off
+The rest of the options are politcal boundaries:
+<li>Assembly District </li> 
+<li>Borough</li> 
+<li>Congressional District</li>
+<li>City Council District</li> 
+<li>Community District</li> 
+<li>Senate District</li>
+The user can view politcal boundaries on the map by clicking on the empty box in the options. 
+If the user wants to try other boundarues, it is advised to turn off the previous political boundary.
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/control.png)
 
 ## Asset information and zooming

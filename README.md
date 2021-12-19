@@ -43,8 +43,8 @@ when the user selects a politcal boundary and district. Dynamically means when t
 district or district from another poltical boundary.
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/walkthrough.gif)
 
-## Asset information and political layer
-To view the asset information popup with the layer, select the layer then click on 
+## Asset information and political boundary
+To view the asset information popup with the poltical boundary, select the poltical boundary then click on 
 the Toggle Points from the control twice (off then on). 
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/walkthrough4.gif)
 

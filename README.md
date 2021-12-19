@@ -10,7 +10,7 @@ For new users please read through the tutorial below
 ## Default page
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/Default%20Page.JPG)
 
-## Controls for politcal boundaries and points
+## Selecting politcal boundaries and toggle asset points on the map on or off
 The user will be able to toggle points on and off
 The control allows the user to select a politcal boundadry. It is advised to select 
 only one politcal boundary. 

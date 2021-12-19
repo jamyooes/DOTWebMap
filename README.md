@@ -18,12 +18,14 @@ At the upper right corner of the map there will be an icon shown below.
 Hovering over or moving the cursor over the icon will show various options.
 The first option is to toggle the points on or off
 The rest of the options are politcal boundaries:
+<ul>
 <li>Assembly District </li> 
 <li>Borough</li> 
 <li>Congressional District</li>
 <li>City Council District</li> 
 <li>Community District</li> 
 <li>Senate District</li>
+</ul>
 The user can view politcal boundaries on the map by clicking on the empty box in the options. 
 If the user wants to try other boundarues, it is advised to turn off the previous political boundary.
 <br/>

@@ -33,7 +33,7 @@ To view the asset information popup with the layer, select your layer then toggl
 the points off (empty) and on (blue checkmark)
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/walkthrough4.gif)
 
-###### Sidebar
+## Sidebar
 Clicking on the asset information on the sidebar will zoom the user to the asset 
 ![](https://github.com/jamyooes/DOTWebMap/blob/main/walkthrough/walkthrough3.gif)
 

@@ -1,6 +1,7 @@
 This Document describes the code for bicycle parking
-I highly suggest reading this on an IDE 
+I highly suggest reading this on an IDE specifically vscode
 Please read this side by side with the appropriate files 
+To run on local machine add the liveserver extension on vscode.
 ---------------------------------------------------------------
 index.html 
 ---------------------------------------------------------------

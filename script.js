@@ -301,8 +301,8 @@ function moveToPoint(e) {
 
 //handle onclick data for districts
 function onClickDistrict(e) {
-  map.removeLayer(pointGroup); //When the user selects a layer then points will be updated on the map so the user can clcik on the points on top of the layer
-  map.addLayer(pointGroup);
+  //map.removeLayer(pointGroup); //When the user selects a layer then points will be updated on the map so the user can clcik on the points on top of the layer
+  //map.addLayer(pointGroup);
   //the array wil hold data points on a selectedd layer
   let arr = [];
   //This is to keep track of the clicked layer
